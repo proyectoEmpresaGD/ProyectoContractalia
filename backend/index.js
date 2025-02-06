@@ -59,9 +59,40 @@ app.post("/api/email", async (req, res) => {
         await gerardoTransporter.sendMail({
             from: `"Contractalia Contacto" <${process.env.GERARDO_EMAIL}>`,
             to: "pedidos@contractalia.com",
-            subject: "Este cliente quiere contactar con nosotros",
-            text: `Correo del Cliente: ${email}\n\nMensaje:\n${message}`,
+            subject: "📩 Nuevo contacto desde la web",
+            html: `
+            <div style="font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);">
+                
+                <div style="background-color: #007BFF; padding: 15px; text-align: center; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+                    <h2 style="color: #ffffff; margin: 0;">📩 Nuevo mensaje de contacto</h2>
+                </div>
+        
+                <div style="padding: 20px; color: #333;">
+                    <p style="font-size: 16px; margin-bottom: 10px;"><strong>Detalles del cliente:</strong></p>
+        
+                    <div style="background-color: #ffffff; padding: 15px; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
+                        <p><strong>📧 Email:</strong> <a href="mailto:${email}" style="color: #007BFF; text-decoration: none;">${email}</a></p>
+                        <p><strong>📅 Fecha de envío:</strong> ${new Date().toLocaleString()}</p>
+                    </div>
+        
+                    <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
+        
+                    <p style="font-size: 16px; margin-bottom: 10px;"><strong>📝 Mensaje del cliente:</strong></p>
+                    
+                    <div style="background-color: #ffffff; padding: 15px; border-left: 5px solid #007BFF; border-radius: 5px; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);">
+                        <p style="font-size: 14px; line-height: 1.6; color: #333;">${message}</p>
+                    </div>
+        
+                    <hr style="border: none; height: 1px; background-color: #ddd; margin: 20px 0;">
+                    
+                    <p style="font-size: 12px; color: #777; text-align: center;">
+                        📌 Recibido automáticamente a través del formulario de contacto en <a href="https://www.contractalia.com" style="color: #007BFF; text-decoration: none;">Contractalia.com</a>
+                    </p>
+                </div>
+            </div>
+            `
         });
+
 
         console.log(`📩 Correo enviado a Contractalia desde ${process.env.GERARDO_EMAIL}`);
 
@@ -86,7 +117,7 @@ app.post("/api/email", async (req, res) => {
             <br><br>
             <p style="color: #777; font-size: 12px;">Atentamente, <br> El equipo de Contractalia</p>
         </div>
-      `,
+        `,
         });
 
         console.log(`📨 Respuesta enviada al cliente ${email} desde ${process.env.PEDIDOS_EMAIL}`);
