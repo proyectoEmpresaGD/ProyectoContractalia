@@ -6,7 +6,7 @@ const Form = () => {
     const [message, setMessage] = useState("");
     const [status, setStatus] = useState("");
     const [loading, setLoading] = useState(false);
-
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     // 📌 Validar Email con regex (sin espacios y con formato correcto)
     const isValidEmail = (email) => {
         const trimmedEmail = email.trim();
@@ -47,7 +47,7 @@ const Form = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5000/api/email", {
+            const response = await fetch(`${API_BASE_URL}/api/email`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email: email.trim(), phone, message }),
