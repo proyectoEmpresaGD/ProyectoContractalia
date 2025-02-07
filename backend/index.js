@@ -2,7 +2,7 @@ import express, { json } from "express";
 import nodemailer from "nodemailer";
 import 'dotenv/config';
 import { corsMiddleware } from "./src/middlewares/cors.js";
-
+import helmet from "helmet";
 
 
 
@@ -44,7 +44,20 @@ const pedidosTransporter = nodemailer.createTransport({
         pass: process.env.PEDIDOS_PASS,
     },
 });
-
+app.use(
+    helmet({
+        contentSecurityPolicy: {
+            directives: {
+                defaultSrc: ["'self'"],
+                scriptSrc: ["'self'", "https://proyecto-contractalia-backend.vercel.app"],
+                styleSrc: ["'self'", "'unsafe-inline'", "https://fonts.googleapis.com"],
+                fontSrc: ["'self'", "data:", "https://fonts.gstatic.com", "https://proyecto-contractalia-backend.vercel.app"],
+                imgSrc: ["'self'", "data:", "https://proyecto-contractalia-backend.vercel.app"],
+                connectSrc: ["'self'", "https://proyecto-contractalia-backend.vercel.app"],
+            },
+        },
+    })
+);
 // 📌 Ruta para recibir datos del formulario y enviar los correos
 app.post("/api/email", async (req, res) => {
     const { email, message } = req.body;

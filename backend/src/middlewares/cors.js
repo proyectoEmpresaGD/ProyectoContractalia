@@ -14,6 +14,10 @@ const ACCEPTED_ORIGINS = [
     "https://bassari.eu",
     "https://www.bassari.eu",
     "https://translate.google.com", // Para permitir Google Translate
+    "https://proyecto-contractalia-backend.vercel.app/", // Para permitir Google Translate
+    "https://proyecto-contractalia-web.vercel.app/",
+    "https://www.contractalia.com",
+    "https://cjmw.com"
 ];
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>
@@ -27,4 +31,5 @@ export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>
         credentials: true, // ✅ Permite envío de cookies y autenticaciones si es necesario
         methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"], // ✅ Métodos permitidos
         allowedHeaders: ["Content-Type", "Authorization"], // ✅ Encabezados permitidos
+        exposedHeaders: ["Content-Length", "X-Foo"], // Permite acceder a estos headers
     });
