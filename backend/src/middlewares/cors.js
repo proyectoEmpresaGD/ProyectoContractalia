@@ -3,6 +3,7 @@ import cors from "cors";
 const ACCEPTED_ORIGINS = [
     "http://localhost:5173",
     "http://localhost:1234",
+    "http://localhost:5000",
     "https://movies.com",
     "https://midu.dev",
     "https://proyecto-react-cjmw-neon.vercel.app",
@@ -14,10 +15,11 @@ const ACCEPTED_ORIGINS = [
     "https://bassari.eu",
     "https://www.bassari.eu",
     "https://translate.google.com", // Para permitir Google Translate
-    "https://proyecto-contractalia-backend.vercel.app/", // Para permitir Google Translate
-    "https://proyecto-contractalia-web.vercel.app/",
+    "https://proyecto-contractalia-backend.vercel.app", // Para permitir Google Translate
+    "https://proyecto-contractalia-web.vercel.app",
     "https://www.contractalia.com",
-    "https://cjmw.com"
+    "https://contractalia.com",
+
 ];
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>
