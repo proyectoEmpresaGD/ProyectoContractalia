@@ -154,8 +154,7 @@ app.post("/api/email", async (req, res) => {
                             <tr>
                                 <td align="left" style="padding-left: 100px; padding-right: 80px;">
                                     <p style="font-size: 18px; color: #333; line-height: 1.6;">
-                                        En <strong>Contractalia</strong>, damos el toque final a los espacios más exigentes. <br>
-                                        Somos especialistas en tapicería, confección e instalación de textiles para el mercado contract, trabajando con hoteles y proyectos de alto nivel.
+                                      Gracias por contacar con nosotros. Nuestro equipo comercial le responderá lo antes posible para que puedas hacer realidad ese nuevo proyecto.
                                     </p>
                                 </td>
                             </tr>
@@ -182,10 +181,7 @@ app.post("/api/email", async (req, res) => {
                                 <tr>
                                     <td align="left" style="padding-left: 100px; padding-right: 80px;">
                                         <p style="font-size: 18px; color: #333; line-height: 1.6;">
-                                            En <strong>Contractalia</strong>, damos el toque final a los espacios más
-                                            exigentes. <br>
-                                            Somos especialistas en tapicería, confección e instalación de textiles para
-                                            el mercado contract, trabajando con hoteles y proyectos de alto nivel.
+                                          Gracias por contacar con nosotros. Nuestro equipo comercial le responderá lo antes posible para que puedas hacer realidad ese nuevo proyecto.
                                         </p>
                                     </td>
                                 </tr>
