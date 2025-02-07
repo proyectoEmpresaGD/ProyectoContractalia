@@ -17,9 +17,8 @@ const ACCEPTED_ORIGINS = [
     "https://translate.google.com", // Para permitir Google Translate
     "https://proyecto-contractalia-backend.vercel.app", // Para permitir Google Translate
     "https://proyecto-contractalia-web.vercel.app",
-    "https://www.contractalia.com",
     "https://contractalia.com",
-
+    "https://www.contractalia.com",
 ];
 
 export const corsMiddleware = ({ acceptedOrigins = ACCEPTED_ORIGINS } = {}) =>
