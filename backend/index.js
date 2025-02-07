@@ -123,22 +123,135 @@ app.post("/api/email", async (req, res) => {
             to: email,
             subject: "Gracias por contactarnos en Contractalia",
             html: `
-            <div style="font-family: Arial, sans-serif; padding: 20px; text-align: center; background-color: #f4f4f4;">
-                <h2 style="color: #333;">¡Gracias por contactarnos!</h2>
-                <p style="color: #555;">Estimado/a cliente,</p>
-                <p style="color: #555;">
-                    Hemos recibido su mensaje y en breve uno de nuestros agentes se pondrá en contacto con usted.
-                </p>
-                <p style="color: #555;">Mientras tanto, puede visitar nuestra web para más información.</p>
-                <br>
-                <a href="https://www.contractalia.com" 
-                    style="display: inline-block; background-color: #000; color: #fff; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
-                    Visitar nuestra web
-                </a>
-                <br><br>
-                <p style="color: #777; font-size: 12px;">Atentamente, <br> El equipo de Contractalia</p>
-            </div>
-            `,
+           <!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contractalia</title>
+</head>
+
+<body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
+
+    <!-- Contenido principal -->
+    <table width="700px" cellpadding="0" cellspacing="0" border="0"
+        style="background-color: #606060; padding-right: 20px; padding-bottom: 20px; margin: auto;">
+        <tr>
+            <td align="center">
+
+                <!--[if mso]>
+                <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:800px; height:600px;">
+                    <v:fill type="frame" src="https://bassari.eu/PaginaContractalia/ImagenFondoContractalia.jpg" color="#ffffff"/>
+                    <v:textbox inset="0,0,0,0" style="mso-position-vertical:center; mso-position-vertical-relative:text; padding-top: 100px; text-align:center;">
+                        <table width="80%" cellpadding="20" cellspacing="0" border="0" align="center" 
+                            style="background-color: #ffffff; text-align: left; margin: auto;">
+                            <tr>
+                                <td align="left">
+                                    <img src="https://bassari.eu/ImagenesTelasCjmw/Iconos/Logos/LOGOS%20MARCAS/LogoContractalia.png" alt="Contractalia" width="80" height="80" style="display: block;">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" style="padding-left: 100px; padding-right: 80px;">
+                                    <p style="font-size: 18px; color: #333; line-height: 1.6;">
+                                        En <strong>Contractalia</strong>, damos el toque final a los espacios más exigentes. <br>
+                                        Somos especialistas en tapicería, confección e instalación de textiles para el mercado contract, trabajando con hoteles y proyectos de alto nivel.
+                                    </p>
+                                </td>
+                            </tr>
+                        </table>
+                    </v:textbox>
+                </v:rect>
+                <![endif]-->
+
+                <!-- Versión para otros clientes de correo -->
+                <!--[if !mso]><!-->
+                <table width="800px" height="600px" cellpadding="0" cellspacing="0" border="0" 
+                    style="background: url('https://bassari.eu/PaginaContractalia/ImagenFondoContractalia.jpg') no-repeat center center;
+                    background-size: cover; box-shadow: 0 0 10px rgba(0,0,0,0.2);">
+                    <tr>
+                        <td align="center" style="padding: 60px;">
+                            <table width="80%" cellpadding="20" cellspacing="0" border="0"
+                                style="background-color: #ffffff; text-align: left;">
+                                <tr>
+                                    <td align="left">
+                                        <img src="https://bassari.eu/ImagenesTelasCjmw/Iconos/Logos/LOGOS%20MARCAS/LogoContractalia.png"
+                                            alt="Contractalia" width="80" style="display: block;">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" style="padding-left: 100px; padding-right: 80px;">
+                                        <p style="font-size: 18px; color: #333; line-height: 1.6;">
+                                            En <strong>Contractalia</strong>, damos el toque final a los espacios más
+                                            exigentes. <br>
+                                            Somos especialistas en tapicería, confección e instalación de textiles para
+                                            el mercado contract, trabajando con hoteles y proyectos de alto nivel.
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <!--<![endif]-->
+
+            </td>
+        </tr>
+    </table>
+
+    <!-- FIRMA - VERSIÓN EXCLUSIVA PARA OUTLOOK -->
+<!--[if mso]>
+<v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:700px; height:175px; margin: auto;">
+    <v:textbox inset="0,0,0,0" style="mso-position-vertical:after; mso-position-vertical-relative:page; padding-top: 30px; mso-margin-top-alt:30px;">
+        <table width="700px" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #ffffff; text-align: left; font-family: Arial, sans-serif; color: black; border-spacing: 0;">
+            <tr>
+                <td style="padding-left: 32px; padding-right: 20px; vertical-align: top;">
+                    <img src="https://bassari.eu/ImagenesTelasCjmw/Iconos/Logos/LogosParaFirmas/LOGO_CONTRACT_GRIS_MACIZO_15CM.png" alt="Contractalia Logo" width="110">
+                </td>
+                <td style="font-size: 15px; vertical-align: top; padding-right: 20px;">
+                    <p><strong style="font-size: 17px;">Manolo Hidalgo</strong> <br> <em>Director Ventas Contract</em></p>
+                    <p>M. 691 544 281 <br> <a href="mailto:pedidos@contractalia.com" style="color: black; text-decoration: none;">pedidos@contractalia.com</a></p>
+                </td>
+                <td style="border-left: solid 1px; height: 60px; margin-top: 2px; margin-right: 8px;"></td>
+                <td style="font-size: 14px; padding-left: 20px; vertical-align: top;">
+                    <p>Avda. de Europa, 19 <br>14550 Montilla, C&oacute;rdoba <br>M. 691 544 281 <br>
+                        <a href="mailto:pedidos@contractalia.com" style="color: black; text-decoration: none;">pedidos@contractalia.com</a> <br>
+                        <a href="https://contractalia.com" style="color: black; text-decoration: none;">contractalia.com</a>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </v:textbox>
+</v:rect>
+<![endif]-->
+
+
+<!-- FIRMA - VERSIÓN PARA OTROS CLIENTES -->
+<!--[if !mso]><!-->
+<table width="700px" cellpadding="0" cellspacing="0" border="0" align="center" style="background-color: #ffffff; text-align: left; margin-top: 30px; font-family: Arial, sans-serif; color: black; border-spacing: 0;">
+    <tr>
+        <td style="padding-top: 10px; padding-left: 32px; vertical-align: top;">
+            <img src="https://bassari.eu/ImagenesTelasCjmw/Iconos/Logos/LogosParaFirmas/LOGO_CONTRACT_GRIS_MACIZO_15CM.png" alt="Contractalia Logo" width="110">
+        </td>
+        <td style="font-size: 15px; vertical-align: top;">
+            <p><strong style="font-size: 17px;">Manolo Hidalgo</strong> <br> <em>Director Ventas Contract</em></p>
+            <p>M. 691 544 281 <br> <a href="mailto:pedidos@contractalia.com" style="color: black; text-decoration: none;">pedidos@contractalia.com</a></p>
+        </td>
+        <td style="border-left: solid 1px; height: 98px; margin-top: 2px; margin-right: 8px;"></td>
+        <td style="font-size: 14px; padding-left: 50px; vertical-align: top;">
+            <p>Avda. de Europa, 19 <br>14550 Montilla, C&oacute;rdoba <br>M. 691 544 281 <br>
+                <a href="mailto:pedidos@contractalia.com" style="color: black; text-decoration: none;">pedidos@contractalia.com</a> <br>
+                <a href="https://contractalia.com" style="color: black; text-decoration: none;">contractalia.com</a>
+            </p>
+        </td>
+    </tr>
+</table>
+<!--<![endif]-->
+
+
+</body>
+
+</html> `,
         });
 
         console.log(`📨 Respuesta enviada al cliente ${email} desde ${process.env.PEDIDOS_EMAIL}`);
