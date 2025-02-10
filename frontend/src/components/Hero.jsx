@@ -34,7 +34,7 @@ const Home = () => {
       </div>
 
       {/* Contenido principal con margen en móviles */}
-      <div className="relative z-10 max-w-2xl text-white mt-10 md:mt-0">
+      <div className="relative z-10 max-w-2xl text-white mt-10 mb-10 md:mt-0">
         <h1 className="text-3xl md:text-5xl font-bold leading-tight">
           Diseño, calidad y versatilidad para crear el máximo confort
         </h1>
