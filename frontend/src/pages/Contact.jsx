@@ -10,16 +10,13 @@ const Contact = () => {
             }}
         >
             {/* Contenido principal */}
-            <div className="relative z-10 max-w-4xl w-full text-white px-6 md:px-12">
-                <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                    Contáctanos
-                </h2>
-                <p className="mt-2 text-lg md:text-xl leading-relaxed">
+            <div className="relative z-10 max-w-4xl w-full text-white px-6 md:px-12 mt-8 ">
+                <h2 className="text-2xl md:text-5xl font-bold mb-4">
                     Cuéntanos cómo podemos ayudarte y te responderemos lo antes posible.
-                </p>
+                </h2>
 
                 {/* Contenedor del formulario mejor alineado y más grande en pantallas grandes */}
-                <div className="mt-10 flex justify-center">
+                <div className="mt-20 flex justify-center">
                     <div className="w-full max-w-md md:max-w-lg lg:max-w-xl bg-white bg-opacity-95 p-8 rounded-2xl shadow-2xl transition-transform transform hover:scale-105">
                         <Form />
                     </div>

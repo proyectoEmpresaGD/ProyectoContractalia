@@ -33,9 +33,9 @@ const Header = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolling ? "bg-white shadow-md" : "bg-transparent"
         }`}
     >
-      <div className="container mx-auto max-w-screen-xl px-4 md:px-10 lg:px-16 flex items-center justify-between md:justify-center py-4 relative">
-        {/* Logo en móviles (siempre visible) */}
-        <div className="md:hidden">
+      <div className="container mx-auto max-w-screen-xl px-4 md:px-10 lg:px-16 flex items-center justify-between xl:justify-center py-4 relative">
+        {/* Logo para móviles (visible en pantallas menores a 1280px) */}
+        <div className="xl:hidden">
           <img
             src="https://bassari.eu/ImagenesTelasCjmw/Iconos/Logos/LogosParaFirmas/LOGO_CONTRACT_GRIS_MACIZO_15CM.png"
             alt="Contractalia Logo"
@@ -43,7 +43,7 @@ const Header = () => {
           />
         </div>
 
-        {/* Logo en pantallas grandes (aparece cuando el navbar es blanco) */}
+        {/* Logo para pantallas grandes (visible en pantallas de 1280px en adelante) */}
         <div
           className={`hidden xl:flex items-center absolute left-0 transition-opacity duration-300 ${scrolling ? "opacity-100" : "opacity-0"
             }`}
@@ -55,7 +55,7 @@ const Header = () => {
           />
         </div>
 
-        {/* Enlaces de navegación en desktop */}
+        {/* Navegación desktop (visible en pantallas de 1280px en adelante) */}
         <nav className="hidden xl:flex space-x-8">
           {menuLinks.map(({ label, href }) => (
             <a
@@ -69,7 +69,7 @@ const Header = () => {
           ))}
         </nav>
 
-        {/* Botón de menú móvil */}
+        {/* Botón de menú móvil (visible en pantallas menores a 1280px) */}
         <button
           onClick={() => setShowMenu(!showMenu)}
           className="xl:hidden text-2xl p-2 focus:outline-none rounded"
